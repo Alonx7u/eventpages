@@ -10,7 +10,7 @@ const App = () => {
         <h2>Welcome to React</h2>
       </div>
       <p className="App-intro">
-        HOLA <code>src/HOLI</code> and save to reload.
+        HOLA <code>src/HOLI</code> PRUEBA
       </p>
     </div>
   );
