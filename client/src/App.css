@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Playwrite+CU:wght@100..400&display=swap');
 .App {
   text-align: center;
 }
@@ -22,3 +24,97 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+body {
+  background-color: rgb(241, 241, 206);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: rgb(241, 241, 206);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+.container h1 {
+  color: #0b0d1d; /* Cambia el color del texto */
+  font-size: 4.5rem; /* Ajusta el tamaño de la fuente */
+  text-align: center; /* Centra el texto */
+  /* font-weight: bold; Ajusta el peso de la fuente */
+  font-family: "Playwrite CU", cursive; /* Cambia la fuente */
+}
+
+.container h2 {
+  color: #0b0d1d; /* Cambia el color del texto */
+  font-size: 2.5rem; /* Ajusta el tamaño de la fuente */
+  text-align: center; /* Centra el texto */
+  /* font-weight: bold; Ajusta el peso de la fuente */
+  font-family: "Playwrite CU", cursive; /* Cambia la fuente */
+}
+
+.wedding-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family:'Times New Roman';
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.card-img-top {
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(0, 0, 0, 0.5); Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time {
+  font-size: 4rem;
+  font-family: Verdana;;
+  font-weight: bold;
+  color: #fff;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  color: #ddd;
+}
+
+
+
