@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button, Card, Modal } from 'react-bootstrap';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import './App.css';
+import img2 from './img/img2.jpeg';
 import inicio from './img/inicio.jpeg';
 
 // Musica
@@ -43,18 +44,15 @@ function MyModal({ onIngresar }) {
 
   return (
     <Modal show={show} onHide={handleClose} centered>
-      <Modal.Header closeButton>
-        <Modal.Title>Bienvenidos a la invitación de Elena y Oswaldo</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        Esta es una invitación especial para nuestra boda ¡Te esperamos!
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Ingresar
-        </Button>
-      </Modal.Footer>
-    </Modal>
+  <Modal.Header className="d-flex flex-column align-items-center">
+    <Modal.Title className="custom-title">Bienvenidos a la invitación de Elena y Oswaldo</Modal.Title>
+    <Button variant="secondary" onClick={handleClose} className="mt-3">
+      Ingresar
+    </Button>
+  </Modal.Header>
+</Modal>
+
+
   );
 }
 
@@ -120,9 +118,26 @@ function App() {
       {/* Reproductor de música */}
       <MusicPlayer playMusic={playMusic} />
 
+      <Card className="text-center" style={{ width: '100%', maxWidth: '900px', margin: '20px auto', borderRadius: '10px' }}>
+        <Card.Body>
+          <Card.Title>Tenemos el gusto de invitarte en este día tan importante de nuestras vidas</Card.Title>
+          <Card.Text>
+            ¡Los esperamos! Será un día inolvidable lleno de amor y felicidad.
+          </Card.Text>
+          </Card.Body>
+      </Card>
+
+      <Card className="text-center" style={{ width: '100%', maxWidth: '900px', margin: '20px auto', borderRadius: '10px', position: 'relative' }}>
+        <Card.Img variant="top" src={img2} alt="Elena y Oswaldo" />
+      </Card>
+
       {/* Modal */}
       <MyModal onIngresar={() => setPlayMusic(true)} />
+
+
     </div>
+
+    
   );
 }
 
