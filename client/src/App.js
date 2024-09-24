@@ -4,7 +4,7 @@ import { Button, Card, Modal } from 'react-bootstrap';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import './App.css';
-import img2 from './img/img2.jpeg';
+import img2 from './img/img.jpg';
 import inicio from './img/inicio.jpeg';
 
 // Musica
@@ -118,18 +118,26 @@ function App() {
       {/* Reproductor de música */}
       <MusicPlayer playMusic={playMusic} />
 
-      <Card className="text-center" style={{ width: '100%', maxWidth: '900px', margin: '20px auto', borderRadius: '10px' }}>
-        <Card.Body>
-          <Card.Title>Tenemos el gusto de invitarte en este día tan importante de nuestras vidas</Card.Title>
-          <Card.Text>
-            ¡Los esperamos! Será un día inolvidable lleno de amor y felicidad.
-          </Card.Text>
-          </Card.Body>
-      </Card>
+      <Card className="text-center custom-card" style={{ width: '100%', maxWidth: '900px', margin: '20px auto', borderRadius: '10px' }}>
+  <Card.Body>
+    <Card.Title className="custom-card-title">Tenemos el gusto de invitarte en este día tan importante de nuestras vidas</Card.Title>
+    <Card.Text className="custom-card-text">
+      ¡Los esperamos! Será un día inolvidable lleno de amor y felicidad.
+    </Card.Text>
+  </Card.Body>
+</Card>
+
+{/* 
+<Card className="text-center" style={{ width: '100%', maxWidth: '900px', margin: '20px auto', borderRadius: '10px', position: 'relative' }}>
+        <Card.Img variant="top" src={img1} alt="Elena y Oswaldo" />
+      </Card> */}
 
       <Card className="text-center" style={{ width: '100%', maxWidth: '900px', margin: '20px auto', borderRadius: '10px', position: 'relative' }}>
         <Card.Img variant="top" src={img2} alt="Elena y Oswaldo" />
       </Card>
+
+      <h4 className="text-center">Dónde & Cuándo</h4>
+      
 
       {/* Modal */}
       <MyModal onIngresar={() => setPlayMusic(true)} />
