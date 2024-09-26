@@ -12,6 +12,10 @@ import i5 from "./img/5.jpeg";
 import i6 from "./img/6.jpeg";
 import img2 from "./img/img.jpg";
 import inicio from "./img/inicio.jpeg";
+import mA from "./img/mA.jpg";
+import mN from "./img/mN.jpg";
+import PA from "./img/PA.jpg";
+import PN from "./img/PN.jpg";
 import salon from "./img/salon1.jpg";
 import vestir from "./img/vestir.jpeg";
 
@@ -109,7 +113,7 @@ function App() {
   return (
     <div className="container">
       <h1>
-        <i className="far fa-heart"></i>Nuestra Boda
+        <i className="far fa-heart"></i>Nuestra Boda{" "}
         <i className="far fa-heart"></i>
       </h1>
       <h2>Elena y Oswaldo</h2>
@@ -180,6 +184,7 @@ function App() {
           position: "relative",
         }}
       >
+        {/* LUGAR Y LA FECHA */}
         <Card.Img variant="top" src={img2} alt="Elena y Oswaldo" />
       </Card>
       <h4 className="text-center">Cuándo & Dónde</h4>
@@ -229,6 +234,7 @@ function App() {
         alt="vestir"
         style={{ maxWidth: "450px", margin: "20px auto" }}
       />
+      {/* FOTOS DE LOS NOVIOS */}
       <h4 className="text-center">Nosotros</h4>
       <div className="row">
         <div className="col-md-6">
@@ -282,6 +288,55 @@ function App() {
             className="img-fluid"
             style={{ borderRadius: "10px", marginBottom: "15px" }}
           />
+        </div>
+      </div>
+      
+      {/* PADRES */}
+      <h4>Padres de los Novios</h4>
+      <div className="row row-cols-1 row-cols-md-2 g-4">
+        <div className="col">
+          <div className="card">
+            <img src={PA} className="card-img-top" alt="Padre-Novia" style={{borderRadius: "70%"}} />
+            <div className="card-body">
+              <h5 className="card-title">JUAN</h5>
+              <p className="card-text">
+                Padre de la Novia
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card">
+            <img src={mA} className="card-img-top" alt="Madre-Novia" style={{borderRadius: "70%"}} />
+            <div className="card-body">
+              <h5 className="card-title">JUANA</h5>
+              <p className="card-text">
+                Madre de la Novia
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card">
+            <img src={PN} className="card-img-top" alt="Padre-Novio" style={{borderRadius: "70%"}} />
+            <div className="card-body">
+              <h5 className="card-title">LUIS GALINDO</h5>
+              <p className="card-text">
+                Padre del Novio
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card">
+            <img src={mN} className="card-img-top" alt="Madre-Novio" style={{borderRadius: "70%"}} />
+            <div className="card-body">
+              <h5 className="card-title">MARIA OFELIA LOPEZ</h5>
+              <p className="card-text">
+                Madre del Novio
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       {/* Modal */}
