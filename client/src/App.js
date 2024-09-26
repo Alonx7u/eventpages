@@ -14,13 +14,15 @@ import img2 from "./img/img.jpg";
 import inicio from "./img/inicio.jpeg";
 import mA from "./img/mA.jpg";
 import mN from "./img/mN.jpg";
+// import novios from "./img/novios.png";
+import novios from "./img/novios1.gif";
 import PA from "./img/PA.jpg";
 import PN from "./img/PN.jpg";
 import salon from "./img/salon1.jpg";
 import vestir from "./img/vestir.jpeg";
 
 // Musica
-const MusicPlayer = ({ playMusic }) => {
+  const MusicPlayer = ({ playMusic }) => {
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -80,9 +82,22 @@ function MyModal({ onIngresar }) {
     </Modal>
   );
 }
-
+   
 // App principal
 function App() {
+
+  // Deshabilitar botón después de la fecha límite
+  const disableDate = new Date("2024-10-15T20:23:00"); //fecha limite
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  useEffect(() => {
+    const now = new Date();
+    if (now > disableDate) {
+      setIsButtonDisabled(true);
+    }
+  }, []);
+
+  // Contador de tiempo
   const weddingDate = new Date("2024-11-16T20:00:00");
   const [playMusic, setPlayMusic] = useState(false); // El estado inicial es `false`
 
@@ -108,6 +123,9 @@ function App() {
     }, 1000);
 
     return () => clearInterval(interval);
+
+    
+
   }, []);
 
   return (
@@ -154,8 +172,9 @@ function App() {
         </div>
       </Card>
       {/* Reproductor de música */}
-      <MusicPlayer playMusic={playMusic} />
+      {/* <MusicPlayer playMusic={playMusic} /> */}
       <Card
+        data-aos="fade-up"
         className="text-center custom-card"
         style={{
           width: "100%",
@@ -295,7 +314,7 @@ function App() {
       <h4>Padres de los Novios</h4>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         <div className="col">
-          <div className="card">
+          <div className="card-fotos">
             <img src={PA} className="card-img-top" alt="Padre-Novia" style={{borderRadius: "70%"}} />
             <div className="card-body">
               <h5 className="card-title">JUAN</h5>
@@ -306,7 +325,7 @@ function App() {
           </div>
         </div>
         <div className="col">
-          <div className="card">
+          <div className="card-fotos">
             <img src={mA} className="card-img-top" alt="Madre-Novia" style={{borderRadius: "70%"}} />
             <div className="card-body">
               <h5 className="card-title">JUANA</h5>
@@ -317,7 +336,7 @@ function App() {
           </div>
         </div>
         <div className="col">
-          <div className="card">
+          <div className="card-fotos">
             <img src={PN} className="card-img-top" alt="Padre-Novio" style={{borderRadius: "70%"}} />
             <div className="card-body">
               <h5 className="card-title">LUIS GALINDO</h5>
@@ -328,7 +347,7 @@ function App() {
           </div>
         </div>
         <div className="col">
-          <div className="card">
+          <div className="card-fotos">
             <img src={mN} className="card-img-top" alt="Madre-Novio" style={{borderRadius: "70%"}} />
             <div className="card-body">
               <h5 className="card-title">MARIA OFELIA LOPEZ</h5>
@@ -339,6 +358,47 @@ function App() {
           </div>
         </div>
       </div>
+     
+     <div style={{marginBottom: "2rem"}}></div>
+
+      <Card
+        className="text-center custom-card"
+        style={{
+          width: "100%",
+          maxWidth: "900px",
+          margin: "20px auto",
+          borderRadius: "10px",
+        }}
+      >
+        <Card.Body>
+          <Card.Title className="custom-card-title">Confirmar Asistencia</Card.Title>
+          <Card.Text className="custom-card-text">
+            Por favor confirma tu asistencia antes del 16 de Octubre de 2024
+          </Card.Text>
+          <Card.Img className="img-novios" src={novios} alt="novios" style={{maxWidth:"200px",}} />
+          <Card.Text className="custom-card-text">
+            ¡Esperamos contar con tu presencia!
+          </Card.Text>
+          <Button
+            variant="success"
+            style={{ marginBottom: "20px" }}
+            href="https://api.whatsapp.com/send?phone=9625133728&text=%C2%A1%C2%A1Hola,%20confirmo%20mi%20asistencia%20a%20tu%20boda!!%F0%9F%91%B0%F0%9F%8F%BB%E2%80%8D%E2%99%80%E2%9D%A4%F0%9F%A4%B5%F0%9F%8F%BB"
+            target="_blank"
+            disabled={isButtonDisabled}
+          >
+            Confirmar Asistencia <i className="fas fa-check"></i>
+          </Button>
+          {/* <Button
+            variant="danger"
+            style={{ marginBottom: "20px", marginLeft: "10px" }}
+            href="https://api.whatsapp.com/send?phone=9625133728&text=Lo%20siento,%20no%20podre%20asistir%20a%20tu%20boda%F0%9F%98%94"
+            target="_blank"
+          >
+            No Confirmo Asistencia <i className="fas fa-times"></i>
+          </Button> */}
+        </Card.Body>
+      </Card>
+
       {/* Modal */}
       <MyModal onIngresar={() => setPlayMusic(true)} />{" "}
       {/* Solo reproduce música al cerrar el modal */}

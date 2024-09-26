@@ -164,4 +164,32 @@ body {
   /* font-weight: bold; */
 }
 
+.card-fotos {
+  background-color: rgb(244, 244, 197); 
+  border-radius: 8px; 
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+}
 
+.card-fotos img {
+  width: 150px; 
+  border: 2px solid rgb(246, 235, 235); 
+  border-radius: 8px; 
+  margin-bottom: 16px; 
+}
+
+h5 {
+  font-size: 1.3rem; 
+  font-family: 'Playwrite DE Grund', serif;
+  font-weight: bold ;
+  color: #1b0f17; 
+  margin-bottom: 16px; 
+}
+
+p {
+  font-size: 1.1rem; 
+  font-family: 'Playwrite DE Grund', serif;
+  color: #1b0f17; 
+  margin-bottom: 16px; 
+}
