@@ -15,36 +15,51 @@ import inicio from "./img/inicio.jpeg";
 import mA from "./img/mA.jpg";
 import mN from "./img/mN.jpg";
 // import novios from "./img/novios.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import novios from "./img/novios1.gif";
 import PA from "./img/PA.jpg";
 import PN from "./img/PN.jpg";
 import salon from "./img/salon1.jpg";
 import vestir from "./img/vestir.jpeg";
 
+
+
 // Musica
-  const MusicPlayer = ({ playMusic }) => {
+const MusicPlayer = ({ playMusic }) => {
   const audioRef = useRef(null);
 
   useEffect(() => {
     if (playMusic && audioRef.current) {
       audioRef.current.audio.current.play(); // Reproduce la música automáticamente
     } else if (!playMusic && audioRef.current) {
-      audioRef.current.audio.current.pause(); // Pausa la música si no debe reproducirse
+      audioRef.current.audio.current.pause(); // Pausa la música
     }
   }, [playMusic]);
 
   return (
-    <div>
+    <div className="music-container" style={{ position: "relative" }}>
       <h3>¡Escucha nuestra canción!</h3>
       <AudioPlayer
         ref={audioRef}
         src="/music/love.mp3"
-        onPlay={(e) => console.log("Reproduciendo...")}
-        onPause={(e) => console.log("Pausado...")}
+        onPlay={() => console.log("Reproduciendo...")}
+        onPause={() => console.log("Pausado...")}
       />
+      {playMusic && (
+        <div className="floating-notes">
+          <div className="note">♪</div>
+          <div className="note">♫</div>
+          <div className="note">♪</div>
+          <div className="note">♫</div>
+          <div className="note">♪</div>
+        </div>
+      )}
     </div>
   );
 };
+
+
 
 // Modal
 function MyModal({ onIngresar }) {
@@ -74,7 +89,7 @@ function MyModal({ onIngresar }) {
         <Button
           variant="btn btn-outline-secondary"
           onClick={handleClose}
-          className="mt-3"
+          className="btn-animate1 mt-3"
         >
           Ingresar
         </Button>
@@ -85,6 +100,12 @@ function MyModal({ onIngresar }) {
    
 // App principal
 function App() {
+
+  // Inicializar AOS
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }
+  , []);
 
   // Deshabilitar botón después de la fecha límite
   const disableDate = new Date("2024-10-15T20:23:00"); //fecha limite
@@ -129,12 +150,14 @@ function App() {
   }, []);
 
   return (
+    <div className="parallax">
+
     <div className="container">
-      <h1>
+      <h1 data-aos="fade-up">
         <i className="far fa-heart"></i>Nuestra Boda{" "}
         <i className="far fa-heart"></i>
       </h1>
-      <h2>Elena y Oswaldo</h2>
+      <h2 data-aos="fade-left">Elena y Oswaldo</h2>
       {/* Tarjeta con la imagen y el contador */}
       <Card
         className="text-center"
@@ -172,7 +195,7 @@ function App() {
         </div>
       </Card>
       {/* Reproductor de música */}
-      {/* <MusicPlayer playMusic={playMusic} /> */}
+      <MusicPlayer playMusic={playMusic} />
       <Card
         data-aos="fade-up"
         className="text-center custom-card"
@@ -193,7 +216,9 @@ function App() {
           </Card.Text>
         </Card.Body>
       </Card>
+        {/* LUGAR Y LA FECHA */}
       <Card
+        data-aos="fade-up"
         className="text-center"
         style={{
           width: "100%",
@@ -203,11 +228,11 @@ function App() {
           position: "relative",
         }}
       >
-        {/* LUGAR Y LA FECHA */}
         <Card.Img variant="top" src={img2} alt="Elena y Oswaldo" />
       </Card>
       <h4 className="text-center">Cuándo & Dónde</h4>
       <Card
+        data-aos="fade-up"
         className="text-center custom-card"
         style={{
           width: "100%",
@@ -216,7 +241,7 @@ function App() {
           borderRadius: "10px",
         }}
       >
-        <Card.Body>
+        <Card.Body data-aos="fade-up">
           <Card.Title className="custom-card-title">Lugar</Card.Title>
           <Card.Img
             variant="top"
@@ -231,6 +256,7 @@ function App() {
             30830 Tapachula de Córdova y Ordóñez, Chis.
           </Card.Text>
           <Button
+            className="btn-animate"
             variant="info"
             style={{ marginBottom: "20px" }}
             href="https://maps.app.goo.gl/ypiEgAGMJitzgkrK6"
@@ -248,6 +274,7 @@ function App() {
       </Card>
       <h4 className="text-center">Código de vestimenta</h4>
       <Card.Img
+        data-aos="fade-up"
         variant="top"
         src={vestir}
         alt="vestir"
@@ -255,7 +282,7 @@ function App() {
       />
       {/* FOTOS DE LOS NOVIOS */}
       <h4 className="text-center">Nosotros</h4>
-      <div className="row">
+      <div className="row" data-aos="fade-up">
         <div className="col-md-6">
           <img
             src={i1}
@@ -273,7 +300,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="row">
+      <div className="row" data-aos="fade-up">
         <div className="col-md-6">
           <img
             src={i3}
@@ -291,7 +318,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="row">
+      <div className="row" data-aos="fade-up">
         <div className="col-md-6">
           <img
             src={i5}
@@ -312,7 +339,7 @@ function App() {
       
       {/* PADRES */}
       <h4>Padres de los Novios</h4>
-      <div className="row row-cols-1 row-cols-md-2 g-4">
+      <div className="row row-cols-1 row-cols-md-2 g-4" data-aos="fade-left">
         <div className="col">
           <div className="card-fotos">
             <img src={PA} className="card-img-top" alt="Padre-Novia" style={{borderRadius: "70%"}} />
@@ -362,6 +389,7 @@ function App() {
      <div style={{marginBottom: "2rem"}}></div>
 
       <Card
+        data-aos="fade-right"
         className="text-center custom-card"
         style={{
           width: "100%",
@@ -380,6 +408,7 @@ function App() {
             ¡Esperamos contar con tu presencia!
           </Card.Text>
           <Button
+          className="btn-animate"
             variant="success"
             style={{ marginBottom: "20px" }}
             href="https://api.whatsapp.com/send?phone=9625133728&text=%C2%A1%C2%A1Hola,%20confirmo%20mi%20asistencia%20a%20tu%20boda!!%F0%9F%91%B0%F0%9F%8F%BB%E2%80%8D%E2%99%80%E2%9D%A4%F0%9F%A4%B5%F0%9F%8F%BB"
@@ -402,6 +431,7 @@ function App() {
       {/* Modal */}
       <MyModal onIngresar={() => setPlayMusic(true)} />{" "}
       {/* Solo reproduce música al cerrar el modal */}
+    </div>
     </div>
   );
 }

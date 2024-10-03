@@ -193,3 +193,119 @@ p {
   color: #1b0f17; 
   margin-bottom: 16px; 
 }
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+  
+}
+
+h1 {
+  animation: blink 2s infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #e1d998, 0 0 10px #f1e1a2, 0 0 15px rgb(251, 141, 214), 0 0 20px rgb(233, 135, 187);
+  }
+  100% {
+    text-shadow: 0 0 10px #f0f07f, 0 0 20px rgb(240, 159, 209), 0 0 30px rgb(250, 155, 207), 0 0 40px rgb(235, 142, 184);
+  }
+}
+
+h2 {
+  animation: glow 3s infinite;
+
+}
+.parallax {
+  background-image: url('./img/fondo.gif');
+  min-height: 500px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.btn-animate {
+  position: relative;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-animate:hover {
+  background-color: #218838;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.btn-animate1 {
+  position: relative;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #96cef3;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-animate1:hover {
+  background-color: #aaa834;
+  box-shadow: 0 0 15px rgba(225, 107, 174, 0.2);
+  transform: scale(1.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.note {
+  position: absolute;
+  font-size: 20px;
+  color: #ff69b4;
+  animation: float 3s infinite;
+  opacity: 0;
+}
+
+.note:nth-child(1) {
+  left: 10%;
+  animation-delay: 0.5s;
+}
+
+.note:nth-child(2) {
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.note:nth-child(3) {
+  left: 50%;
+  animation-delay: 1.5s;
+}
+
+.note:nth-child(4) {
+  left: 70%;
+  animation-delay: 2s;
+}
+
+.note:nth-child(5) {
+  left: 90%;
+  animation-delay: 2.5s;
+}
+
+
