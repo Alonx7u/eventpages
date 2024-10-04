@@ -1,3 +1,5 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Card, Modal } from "react-bootstrap";
@@ -14,16 +16,12 @@ import img2 from "./img/img.jpg";
 import inicio from "./img/inicio.jpeg";
 import mA from "./img/mA.jpg";
 import mN from "./img/mN.jpg";
-// import novios from "./img/novios.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import novios from "./img/novios1.gif";
 import PA from "./img/PA.jpg";
 import PN from "./img/PN.jpg";
+import post from "./img/post.gif";
 import salon from "./img/salon1.jpg";
 import vestir from "./img/vestir.jpeg";
-
-
 
 // Musica
 const MusicPlayer = ({ playMusic }) => {
@@ -38,11 +36,11 @@ const MusicPlayer = ({ playMusic }) => {
   }, [playMusic]);
 
   return (
-    <div className="music-container" style={{ position: "relative" }}>
+    <div className="music-container" style={{ position: "relative",  }}>
       <h3>¡Escucha nuestra canción!</h3>
       <AudioPlayer
         ref={audioRef}
-        src="/music/love.mp3"
+        src="/music/close.mp3"
         onPlay={() => console.log("Reproduciendo...")}
         onPause={() => console.log("Pausado...")}
       />
@@ -58,8 +56,6 @@ const MusicPlayer = ({ playMusic }) => {
     </div>
   );
 };
-
-
 
 // Modal
 function MyModal({ onIngresar }) {
@@ -97,15 +93,13 @@ function MyModal({ onIngresar }) {
     </Modal>
   );
 }
-   
+
 // App principal
 function App() {
-
   // Inicializar AOS
   useEffect(() => {
     AOS.init({ duration: 2000 });
-  }
-  , []);
+  }, []);
 
   // Deshabilitar botón después de la fecha límite
   const disableDate = new Date("2024-10-15T20:23:00"); //fecha limite
@@ -144,29 +138,15 @@ function App() {
     }, 1000);
 
     return () => clearInterval(interval);
-
-    
-
   }, []);
 
   return (
-    <div className="parallax">
-
     <div className="container">
-      <h1 data-aos="fade-up">
-        <i className="far fa-heart"></i>Nuestra Boda{" "}
-        <i className="far fa-heart"></i>
-      </h1>
-      <h2 data-aos="fade-left">Elena y Oswaldo</h2>
       {/* Tarjeta con la imagen y el contador */}
       <Card
-        className="text-center"
+        className="img-fluid"
         style={{
-          width: "100%",
-          maxWidth: "900px",
-          margin: "20px auto",
-          borderRadius: "10px",
-          position: "relative",
+          marginBottom: "15px",
         }}
       >
         <Card.Img variant="top" src={inicio} alt="Elena y Oswaldo" />
@@ -194,10 +174,26 @@ function App() {
           </div>
         </div>
       </Card>
-      {/* Reproductor de música */}
-      <MusicPlayer playMusic={playMusic} />
+      {/* Mensaje de bienvenida */}
+      <h1
+        data-aos="fade-up" 
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        style={{
+          marginBottom: "40px", // Espacio entre el mensaje de bienvenida y la invitación
+        }}
+      >
+        <i className="far fa-heart"></i>Nuestra Boda{" "}
+        <i className="far fa-heart"></i>
+      </h1>
+      <h2 data-aos="fade-left" data-aos-duration="1000"
+        data-aos-delay="200" style={{ marginBottom: "30px" }}>
+        Elena y Oswaldo
+      </h2>
       <Card
         data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
         className="text-center custom-card"
         style={{
           width: "100%",
@@ -206,19 +202,28 @@ function App() {
           borderRadius: "10px",
         }}
       >
+        {/* Invitación */}
         <Card.Body>
           <Card.Title className="custom-card-title">
             Tenemos el gusto de invitarte en este día tan importante de nuestras
             vidas
           </Card.Title>
+          <Card.Img variant="top" src={post} alt="post" style={{ width: "10%",
+          maxWidth: "900px",
+          margin: "20px auto",
+          borderRadius: "10px",}}/>
           <Card.Text className="custom-card-text">
             ¡Los esperamos! Será un día inolvidable lleno de amor y felicidad.
           </Card.Text>
         </Card.Body>
       </Card>
-        {/* LUGAR Y LA FECHA */}
+      {/* Reproductor de música */}
+      <MusicPlayer playMusic={playMusic} />
+      {/* LUGAR Y LA FECHA */}
       <Card
         data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
         className="text-center"
         style={{
           width: "100%",
@@ -233,6 +238,8 @@ function App() {
       <h4 className="text-center">Cuándo & Dónde</h4>
       <Card
         data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
         className="text-center custom-card"
         style={{
           width: "100%",
@@ -241,7 +248,8 @@ function App() {
           borderRadius: "10px",
         }}
       >
-        <Card.Body data-aos="fade-up">
+        <Card.Body data-aos="fade-up" data-aos-duration="1000"
+        data-aos-delay="200">
           <Card.Title className="custom-card-title">Lugar</Card.Title>
           <Card.Img
             variant="top"
@@ -275,121 +283,141 @@ function App() {
       <h4 className="text-center">Código de vestimenta</h4>
       <Card.Img
         data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
         variant="top"
         src={vestir}
         alt="vestir"
         style={{ maxWidth: "450px", margin: "20px auto" }}
       />
-      {/* FOTOS DE LOS NOVIOS */}
-      <h4 className="text-center">Nosotros</h4>
-      <div className="row" data-aos="fade-up">
-        <div className="col-md-6">
-          <img
-            src={i1}
-            alt="foto1"
-            className="img-fluid"
-            style={{ borderRadius: "10px", marginBottom: "15px" }}
-          />
-        </div>
-        <div className="col-md-6">
-          <img
-            src={i2}
-            alt="foto2"
-            className="img-fluid"
-            style={{ borderRadius: "10px", marginBottom: "15px" }}
-          />
+      <div className="card my-4" style={{ background: "#fdebb3" }}>
+        <div className="card-body">
+          <h4 className="text-center">Nosotros</h4>
+          <div className="row" data-aos="fade-up" data-aos-duration="1000"
+        data-aos-delay="200">
+            <div className="col-md-6">
+              <img
+                src={i1}
+                alt="foto1"
+                className="img-fluid"
+                style={{ borderRadius: "10px", marginBottom: "15px" }}
+              />
+            </div>
+            <div className="col-md-6">
+              <img
+                src={i2}
+                alt="foto2"
+                className="img-fluid"
+                style={{ borderRadius: "10px", marginBottom: "15px" }}
+              />
+            </div>
+          </div>
+          <div className="row" data-aos="fade-up" data-aos-duration="1000"
+        data-aos-delay="200">
+            <div className="col-md-6">
+              <img
+                src={i3}
+                alt="foto3"
+                className="img-fluid"
+                style={{ borderRadius: "10px", marginBottom: "15px" }}
+              />
+            </div>
+            <div className="col-md-6">
+              <img
+                src={i4}
+                alt="foto4"
+                className="img-fluid"
+                style={{ borderRadius: "10px", marginBottom: "15px" }}
+              />
+            </div>
+          </div>
+          <div className="row" data-aos="fade-up" data-aos-duration="1000"
+        data-aos-delay="200">
+            <div className="col-md-6">
+              <img
+                src={i5}
+                alt="foto5"
+                className="img-fluid"
+                style={{ borderRadius: "10px", marginBottom: "15px" }}
+              />
+            </div>
+            <div className="col-md-6">
+              <img
+                src={i6}
+                alt="foto6"
+                className="img-fluid"
+                style={{ borderRadius: "10px", marginBottom: "15px" }}
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="row" data-aos="fade-up">
-        <div className="col-md-6">
-          <img
-            src={i3}
-            alt="foto3"
-            className="img-fluid"
-            style={{ borderRadius: "10px", marginBottom: "15px" }}
-          />
-        </div>
-        <div className="col-md-6">
-          <img
-            src={i4}
-            alt="foto4"
-            className="img-fluid"
-            style={{ borderRadius: "10px", marginBottom: "15px" }}
-          />
-        </div>
-      </div>
-      <div className="row" data-aos="fade-up">
-        <div className="col-md-6">
-          <img
-            src={i5}
-            alt="foto5"
-            className="img-fluid"
-            style={{ borderRadius: "10px", marginBottom: "15px" }}
-          />
-        </div>
-        <div className="col-md-6">
-          <img
-            src={i6}
-            alt="foto6"
-            className="img-fluid"
-            style={{ borderRadius: "10px", marginBottom: "15px" }}
-          />
-        </div>
-      </div>
-      
       {/* PADRES */}
       <h4>Padres de los Novios</h4>
-      <div className="row row-cols-1 row-cols-md-2 g-4" data-aos="fade-left">
+      <div className="row row-cols-1 row-cols-md-2 g-4" data-aos="fade-left" data-aos-duration="1000"
+        data-aos-delay="200">
         <div className="col">
           <div className="card-fotos">
-            <img src={PA} className="card-img-top" alt="Padre-Novia" style={{borderRadius: "70%"}} />
+            <img
+              src={PA}
+              className="card-img-top"
+              alt="Padre-Novia"
+              style={{ borderRadius: "70%" }}
+            />
             <div className="card-body">
               <h5 className="card-title">JUAN</h5>
-              <p className="card-text">
-                Padre de la Novia
-              </p>
+              <p className="card-text">Padre de la Novia</p>
             </div>
           </div>
         </div>
         <div className="col">
           <div className="card-fotos">
-            <img src={mA} className="card-img-top" alt="Madre-Novia" style={{borderRadius: "70%"}} />
+            <img
+              src={mA}
+              className="card-img-top"
+              alt="Madre-Novia"
+              style={{ borderRadius: "70%" }}
+            />
             <div className="card-body">
               <h5 className="card-title">JUANA</h5>
-              <p className="card-text">
-                Madre de la Novia
-              </p>
+              <p className="card-text">Madre de la Novia</p>
             </div>
           </div>
         </div>
         <div className="col">
           <div className="card-fotos">
-            <img src={PN} className="card-img-top" alt="Padre-Novio" style={{borderRadius: "70%"}} />
+            <img
+              src={PN}
+              className="card-img-top"
+              alt="Padre-Novio"
+              style={{ borderRadius: "70%" }}
+            />
             <div className="card-body">
               <h5 className="card-title">LUIS GALINDO</h5>
-              <p className="card-text">
-                Padre del Novio
-              </p>
+              <p className="card-text">Padre del Novio</p>
             </div>
           </div>
         </div>
         <div className="col">
           <div className="card-fotos">
-            <img src={mN} className="card-img-top" alt="Madre-Novio" style={{borderRadius: "70%"}} />
+            <img
+              src={mN}
+              className="card-img-top"
+              alt="Madre-Novio"
+              style={{ borderRadius: "70%" }}
+            />
             <div className="card-body">
               <h5 className="card-title">MARIA OFELIA LOPEZ</h5>
-              <p className="card-text">
-                Madre del Novio
-              </p>
+              <p className="card-text">Madre del Novio</p>
             </div>
           </div>
         </div>
       </div>
-     
-     <div style={{marginBottom: "2rem"}}></div>
-
+      <div style={{ marginBottom: "2rem" }}></div>
       <Card
         data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-delay="200"
         className="text-center custom-card"
         style={{
           width: "100%",
@@ -399,16 +427,23 @@ function App() {
         }}
       >
         <Card.Body>
-          <Card.Title className="custom-card-title">Confirmar Asistencia</Card.Title>
+          <Card.Title className="custom-card-title">
+            Confirmar Asistencia
+          </Card.Title>
           <Card.Text className="custom-card-text">
             Por favor confirma tu asistencia antes del 16 de Octubre de 2024
           </Card.Text>
-          <Card.Img className="img-novios" src={novios} alt="novios" style={{maxWidth:"200px",}} />
+          <Card.Img
+            className="img-novios"
+            src={novios}
+            alt="novios"
+            style={{ maxWidth: "200px" }}
+          />
           <Card.Text className="custom-card-text">
             ¡Esperamos contar con tu presencia!
           </Card.Text>
           <Button
-          className="btn-animate"
+            className="btn-animate"
             variant="success"
             style={{ marginBottom: "20px" }}
             href="https://api.whatsapp.com/send?phone=9625133728&text=%C2%A1%C2%A1Hola,%20confirmo%20mi%20asistencia%20a%20tu%20boda!!%F0%9F%91%B0%F0%9F%8F%BB%E2%80%8D%E2%99%80%E2%9D%A4%F0%9F%A4%B5%F0%9F%8F%BB"
@@ -427,11 +462,21 @@ function App() {
           </Button> */}
         </Card.Body>
       </Card>
-
+      <footer className="text-center">
+        <p>
+          &copy; 2024 Página para eventos. Todos los derechos reservados. Diseñado
+          por{" "}
+          <a
+            href="https://www.facebook.com/alonx.gomez17/"
+            target="_blank"
+          >
+            Alondra Gomez 
+          </a>
+        </p>
+      </footer>
       {/* Modal */}
       <MyModal onIngresar={() => setPlayMusic(true)} />{" "}
       {/* Solo reproduce música al cerrar el modal */}
-    </div>
     </div>
   );
 }

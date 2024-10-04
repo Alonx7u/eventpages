@@ -215,11 +215,12 @@ h1 {
 }
 
 h2 {
-  animation: glow 3s infinite;
+  animation: glow 2s infinite;
 
 }
 .parallax {
-  background-image: url('./img/fondo.gif');
+  /* background-image: url('./img/fondo.gif'); */
+  background-color: rgb(182, 180, 180);
   min-height: 500px; 
   background-attachment: fixed;
   background-position: center;
