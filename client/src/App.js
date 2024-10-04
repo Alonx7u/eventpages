@@ -57,7 +57,7 @@ const MusicPlayer = ({ playMusic }) => {
   );
 };
 
-// Modal
+// Modal de bienvenida
 function MyModal({ onIngresar }) {
   const [show, setShow] = useState(false);
 
