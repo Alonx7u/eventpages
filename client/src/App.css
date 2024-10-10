@@ -44,7 +44,7 @@ body {
 
 .container h1 {
   color: #0b0d1d; /* Cambia el color del texto */
-  font-size: 4rem; /* Ajusta el tamaño de la fuente */
+  font-size: 3.5rem; /* Ajusta el tamaño de la fuente */
   text-align: center; /* Centra el texto */
   /*+ font-weight: bold; Ajusta el peso de la fuente */
   font-family: "Playwrite CU", cursive; /* Cambia la fuente */
@@ -52,7 +52,7 @@ body {
 
 .container h2 {
   color: #0b0d1d; /* Cambia el color del texto */
-  font-size: 2.5rem; /* Ajusta el tamaño de la fuente */
+  font-size: 2.2rem; /* Ajusta el tamaño de la fuente */
   text-align: center; /* Centra el texto */
   /* font-weight: bold; Ajusta el peso de la fuente */
   font-family: "Playwrite CU", cursive; /* Cambia la fuente */
@@ -165,7 +165,7 @@ body {
 }
 
 .card-fotos {
-  background-color: rgb(244, 244, 197); 
+  background-color: #fcf8d3; 
   border-radius: 8px; 
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -174,7 +174,7 @@ body {
 
 .card-fotos img {
   width: 150px; 
-  border: 2px solid rgb(246, 235, 235); 
+  border: 2px solid #fcf8d3; 
   border-radius: 8px; 
   margin-bottom: 16px; 
 }
@@ -309,4 +309,61 @@ html {
   animation-delay: 2.5s;
 }
 
+
+.custom-title {
+  font-size: 2rem; /* Cambia el tamaño del texto */
+  text-align: center;
+}
+
+.btn-animate1 {
+  font-size: 1.2rem; /* Ajusta el tamaño del botón */
+  padding: 0.5rem 1rem;
+}
+
+/* Media query para pantallas pequeñas (dispositivos móviles) */
+@media (max-width: 768px) {
+  .custom-title {
+    font-size: 1.5rem; /* Reduce el tamaño del título */
+  }
+
+  .btn-animate1 {
+    font-size: 1rem; /* Reduce el tamaño del botón */
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+
+/* Estilos para el footer */
+.footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Alinear el texto y el ícono en la misma fila */
+.developer-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el nombre y el ícono */
+}
+
+.facebook-link {
+  font-size: 1.5rem;
+  color: #4267B2;
+  text-decoration: none;
+  margin-left: 5px; /* Añadir un poco de margen para separación */
+}
+
+.facebook-link:hover {
+  color: #365899;
+}
 

@@ -21,7 +21,7 @@ import PA from "./img/PA.jpg";
 import PN from "./img/PN.jpg";
 import post from "./img/post.gif";
 import salon from "./img/salon1.jpg";
-import vestir from "./img/vestir.jpeg";
+import vestir from "./img/vestir.png";
 
 // Musica
 const MusicPlayer = ({ playMusic }) => {
@@ -93,6 +93,32 @@ function MyModal({ onIngresar }) {
     </Modal>
   );
 }
+
+// Footer.js
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <p>© 2024 Invitación a la boda de Elena y Oswaldo. Todos los derechos reservados.</p>
+        <p className="developer-info">
+          Desarrollado por Alondra Gomez
+          <a
+            href="https://www.facebook.com/alonx.gomez17" // Reemplaza con tu enlace de Facebook
+            target="_blank"
+            rel="noopener noreferrer"
+            className="facebook-link"
+          >
+            <i className="fab fa-facebook"></i>
+          </a>
+        </p>
+        <p>Esta página está diseñada especialmente para eventos</p>
+      </div>
+    </footer>
+  );
+}
+
+
+
 
 // App principal
 function App() {
@@ -180,14 +206,14 @@ function App() {
         data-aos-duration="1000"
         data-aos-delay="200"
         style={{
-          marginBottom: "40px", // Espacio entre el mensaje de bienvenida y la invitación
+          marginBottom: "35px", // Espacio entre el mensaje de bienvenida y la invitación
         }}
       >
         <i className="far fa-heart"></i>Nuestra Boda{" "}
         <i className="far fa-heart"></i>
       </h1>
       <h2 data-aos="fade-left" data-aos-duration="1000"
-        data-aos-delay="200" style={{ marginBottom: "30px" }}>
+        data-aos-delay="200" style={{ marginBottom: "25px" }}>
         Elena y Oswaldo
       </h2>
       <Card
@@ -290,7 +316,7 @@ function App() {
         alt="vestir"
         style={{ maxWidth: "450px", margin: "20px auto" }}
       />
-      <div className="card my-4" style={{ background: "#fdebb3" }}>
+      <div className="card my-4" style={{ background: "#fcf8d3" }}>
         <div className="card-body">
           <h4 className="text-center">Nosotros</h4>
           <div className="row" data-aos="fade-up" data-aos-duration="1000"
@@ -365,7 +391,7 @@ function App() {
               style={{ borderRadius: "70%" }}
             />
             <div className="card-body">
-              <h5 className="card-title">JUAN</h5>
+              <h5 className="card-title">JOSE DANIEL MALIACHI</h5>
               <p className="card-text">Padre de la Novia</p>
             </div>
           </div>
@@ -379,7 +405,7 @@ function App() {
               style={{ borderRadius: "70%" }}
             />
             <div className="card-body">
-              <h5 className="card-title">JUANA</h5>
+              <h5 className="card-title">RUBELINA MUÑOZ</h5>
               <p className="card-text">Madre de la Novia</p>
             </div>
           </div>
@@ -462,18 +488,8 @@ function App() {
           </Button> */}
         </Card.Body>
       </Card>
-      <footer className="text-center">
-        <p>
-          &copy; 2024 Página para eventos. Todos los derechos reservados. Diseñado
-          por{" "}
-          <a
-            href="https://www.facebook.com/alonx.gomez17/"
-            target="_blank"
-          >
-            Alondra Gomez 
-          </a>
-        </p>
-      </footer>
+      {/* Footer */}
+      <Footer  />
       {/* Modal */}
       <MyModal onIngresar={() => setPlayMusic(true)} />{" "}
       {/* Solo reproduce música al cerrar el modal */}
