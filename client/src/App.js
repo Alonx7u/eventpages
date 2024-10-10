@@ -75,15 +75,13 @@ function MyModal({ onIngresar }) {
       show={show}
       onHide={handleClose}
       centered
-      backdrop="static"
-      keyboard={false}
+      backdrop="static" // Evita cerrar el modal haciendo clic fuera de él
+      keyboard={false} // Evita cerrar el modal con la tecla "Esc"
     >
-      <Modal.Header className="d-flex flex-column align-items-center modal-header">
-        <Modal.Title className="custom-title modal-title">
+      <Modal.Header className="d-flex flex-column align-items-center">
+        <Modal.Title className="custom-title">
           Bienvenidos a la invitación de Elena y Oswaldo
         </Modal.Title>
-      </Modal.Header>
-      <Modal.Body className="text-center">
         <Button
           variant="btn btn-outline-secondary"
           onClick={handleClose}
@@ -91,10 +89,11 @@ function MyModal({ onIngresar }) {
         >
           Ingresar
         </Button>
-      </Modal.Body>
+      </Modal.Header>
     </Modal>
   );
 }
+
 
 // Footer.js
 function Footer() {
@@ -459,7 +458,7 @@ function App() {
             Confirmar Asistencia
           </Card.Title>
           <Card.Text className="custom-card-text">
-            Por favor confirma tu asistencia antes del 16 de Octubre de 2024
+            Por favor confirma tu asistencia antes del 16 de Noviembre
           </Card.Text>
           <Card.Img
             className="img-novios"
