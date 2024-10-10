@@ -310,15 +310,15 @@ html {
 }
 
 
-.custom-title {
-  font-size: 2rem; /* Cambia el tamaño del texto */
+/* .custom-title {
+  font-size: 2rem; 
   text-align: center;
 }
 
 .btn-animate1 {
-  font-size: 1.2rem; /* Ajusta el tamaño del botón */
+  font-size: 1.2rem; 
   padding: 0.5rem 1rem;
-}
+} */
 
 /* Media query para pantallas pequeñas (dispositivos móviles) */
 /* @media (max-width: 768px) {
