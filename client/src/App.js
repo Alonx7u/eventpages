@@ -75,13 +75,15 @@ function MyModal({ onIngresar }) {
       show={show}
       onHide={handleClose}
       centered
-      backdrop="static" // Evita cerrar el modal haciendo clic fuera de él
-      keyboard={false} // Evita cerrar el modal con la tecla "Esc"
+      backdrop="static"
+      keyboard={false}
     >
-      <Modal.Header className="d-flex flex-column align-items-center">
-        <Modal.Title className="custom-title">
+      <Modal.Header className="d-flex flex-column align-items-center modal-header">
+        <Modal.Title className="custom-title modal-title">
           Bienvenidos a la invitación de Elena y Oswaldo
         </Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="text-center">
         <Button
           variant="btn btn-outline-secondary"
           onClick={handleClose}
@@ -89,7 +91,7 @@ function MyModal({ onIngresar }) {
         >
           Ingresar
         </Button>
-      </Modal.Header>
+      </Modal.Body>
     </Modal>
   );
 }

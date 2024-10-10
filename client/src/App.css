@@ -343,19 +343,28 @@ html {
   color: #365899;
 }
 
-.modal {
-  max-width: 90%; /* Limita el ancho máximo del modal en pantallas pequeñas */
-  width: 100%; /* Asegura que use el 100% del ancho disponible */
-  height: auto;
-  margin: 0 auto; /* Centra el modal horizontalmente */
-  padding: 20px;
+/* Estilos para el modal */
+
+.modal-content {
+  border-radius: 10px; /* Esquinas redondeadas */
+  padding: 20px; /* Espacio interno */
 }
 
-@media (max-width: 768px) {
-  .modal {
-    width: 100%; /* Ocupa el 100% de la pantalla en dispositivos móviles */
-    max-width: 100%;
-    padding: 10px; /* Reduce el padding para adaptarse a pantallas más pequeñas */
-  }
+.modal-header {
+  border-bottom: none; /* Quitar la línea de separación */
+  justify-content: center; /* Centrar el contenido del encabezado */
 }
+
+.modal-title {
+  font-size: 1.5rem; /* Tamaño del título */
+  font-weight: bold; /* Peso del texto */
+  text-align: center; /* Centrar el título */
+}
+
+.btn-animate1 {
+  width: 100%; /* Hacer que el botón ocupe todo el ancho */
+  max-width: 200px; /* Ancho máximo para el botón */
+  margin: 0 auto; /* Centrar el botón */
+}
+
 
