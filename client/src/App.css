@@ -321,16 +321,16 @@ html {
 }
 
 /* Media query para pantallas pequeñas (dispositivos móviles) */
-@media (max-width: 768px) {
-  .custom-title {
-    font-size: 1.5rem; /* Reduce el tamaño del título */
-  }
+/* @media (max-width: 768px) {
+  .custom-title { */
+    /* font-size: 1.5rem; Reduce el tamaño del título */
+  /* } */
 
-  .btn-animate1 {
-    font-size: 1rem; /* Reduce el tamaño del botón */
-    padding: 0.4rem 0.8rem;
+  /* .btn-animate1 { */
+    /* font-size: 1rem; Reduce el tamaño del botón */
+    /* padding: 0.4rem 0.8rem;
   }
-}
+} */
 
 
 /* Estilos para el footer */
