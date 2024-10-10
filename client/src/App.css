@@ -309,30 +309,6 @@ html {
   animation-delay: 2.5s;
 }
 
-
-/* .custom-title {
-  font-size: 2rem; 
-  text-align: center;
-}
-
-.btn-animate1 {
-  font-size: 1.2rem; 
-  padding: 0.5rem 1rem;
-} */
-
-/* Media query para pantallas pequeñas (dispositivos móviles) */
-/* @media (max-width: 768px) {
-  .custom-title { */
-    /* font-size: 1.5rem; Reduce el tamaño del título */
-  /* } */
-
-  /* .btn-animate1 { */
-    /* font-size: 1rem; Reduce el tamaño del botón */
-    /* padding: 0.4rem 0.8rem;
-  }
-} */
-
-
 /* Estilos para el footer */
 .footer {
   background-color: #f8f9fa;
@@ -365,5 +341,21 @@ html {
 
 .facebook-link:hover {
   color: #365899;
+}
+
+.modal {
+  max-width: 90%; /* Limita el ancho máximo del modal en pantallas pequeñas */
+  width: 100%; /* Asegura que use el 100% del ancho disponible */
+  height: auto;
+  margin: 0 auto; /* Centra el modal horizontalmente */
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 100%; /* Ocupa el 100% de la pantalla en dispositivos móviles */
+    max-width: 100%;
+    padding: 10px; /* Reduce el padding para adaptarse a pantallas más pequeñas */
+  }
 }
 
