@@ -174,7 +174,7 @@ function App() {
         }}
       >
         <Card.Img variant="top" src={inicio} alt="Elena y Oswaldo" />
-        <div className="overlay" style={{marginTop: "400px"}}>
+        <div className="overlay" style={{marginTop: "390px"}}>
           <Card.Title className="wedding-title" >
             ¡Cuenta Regresiva!
           </Card.Title>
