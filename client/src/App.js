@@ -299,7 +299,7 @@ function App() {
           <Card.Text className="custom-card-text">
             <strong>Fecha:</strong> 16 de Noviembre de 2024
             <br />
-            <strong>Hora:</strong> 20:00 hrs
+            <strong>Hora:</strong> 17:00 hrs
           </Card.Text>
         </Card.Body>
       </Card>

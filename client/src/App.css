@@ -44,7 +44,7 @@ body {
 
 .container h1 {
   color: #0b0d1d; /* Cambia el color del texto */
-  font-size: 3.5rem; /* Ajusta el tamaño de la fuente */
+  font-size: 2.8rem; /* Ajusta el tamaño de la fuente */
   text-align: center; /* Centra el texto */
   /*+ font-weight: bold; Ajusta el peso de la fuente */
   font-family: "Playwrite CU", cursive; /* Cambia la fuente */
@@ -67,7 +67,7 @@ body {
 
 .container h4 {
   color: #0b0d1d; /* Cambia el color del texto */
-  font-size: 2.1rem; /* Ajusta el tamaño de la fuente */
+  font-size: 2rem; /* Ajusta el tamaño de la fuente */
   text-align: center; /* Centra el texto */
   font-weight: bold; 
   font-family: "Playwrite DE Grund"; /* Cambia la fuente */
@@ -143,12 +143,33 @@ body {
   align-items: center;
 }
 
-.time {
+/* .time {
   font-size: 4rem;
   font-family: Verdana;;
   font-weight: bold;
   color: #fff;
+} */
+
+/* Estilo general para los números del contador */
+.time {
+  font-size: 4vw; /* Ajuste basado en el ancho de la pantalla */
+  font-weight: bold; /* Para darle más visibilidad */
 }
+
+/* Para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+  .time {
+    font-size: 8vw; /* Los números serán más grandes en pantallas pequeñas */
+  }
+}
+
+/* Para pantallas grandes */
+@media only screen and (min-width: 1024px) {
+  .time {
+    font-size: 4vw; /* Tamaño menor en pantallas grandes */
+  }
+}
+
 
 .label {
   font-size: 1.2rem;
