@@ -360,7 +360,7 @@ function App() {
       <div className="row row-cols-1 row-cols-md-2 g-4" data-aos="fade-up"  data-aos-duration="1000"
         data-aos-delay="200">
         <div className="col">
-          <div className="card-fotos">
+          <div className="card-fotos-novia">
             <img
               src={PA}
               className="card-img-top"

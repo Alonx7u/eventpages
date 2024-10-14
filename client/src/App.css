@@ -173,10 +173,25 @@ body {
 }
 
 .card-fotos img {
-  width: 380px; 
+  width: 490px; 
   border: 2px solid #fdfbe5; 
   border-radius: 8px; 
   margin-bottom: 16px; 
+}
+
+.card-fotos-novia img {
+  width: 370px; 
+  border: 2px solid #fdfbe5; 
+  border-radius: 8px; 
+  margin-bottom: 16px; 
+}
+
+.card-fotos-novia {
+  background-color: #fdfbe5; 
+  border-radius: 8px; 
+  padding: 16px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+  text-align: center;
 }
 
 h5 {
