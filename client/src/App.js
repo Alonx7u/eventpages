@@ -10,15 +10,11 @@ import i1 from "./img/1.jpeg";
 import i2 from "./img/2.jpeg";
 import i3 from "./img/3.jpeg";
 import i4 from "./img/4.jpeg";
-import i5 from "./img/5.jpeg";
-import i6 from "./img/6.jpeg";
 import img2 from "./img/img.jpg";
 import inicio from "./img/inicio.jpeg";
 import mA from "./img/mA.jpg";
-import mN from "./img/mN.jpg";
 import novios from "./img/novios1.gif";
 import PA from "./img/PA.jpg";
-import PN from "./img/PN.jpg";
 import post from "./img/post.gif";
 import salon from "./img/salon1.jpg";
 import vestir from "./img/vestir.png";
@@ -173,13 +169,13 @@ function App() {
       <Card
         className="img-fluid"
         style={{
-          marginBottom: "15px",
+          marginBottom: "15px", 
         }}
       >
         <Card.Img variant="top" src={inicio} alt="Elena y Oswaldo" />
-        <div className="overlay">
-          <Card.Title className="wedding-title">
-            ¡Cuenta Regresiva!<i className="fab fa-gratipay"></i>
+        <div className="overlay" style={{marginTop: "400px"}}>
+          <Card.Title className="wedding-title" >
+            ¡Cuenta Regresiva!
           </Card.Title>
           <div className="countdown-timer">
             <div className="time-section">
@@ -213,7 +209,7 @@ function App() {
         <i className="far fa-heart"></i>Nuestra Boda{" "}
         <i className="far fa-heart"></i>
       </h1>
-      <h2 data-aos="fade-left" data-aos-duration="1000"
+      <h2 data-aos="fade-up"  data-aos-duration="1000"
         data-aos-delay="200" style={{ marginBottom: "25px" }}>
         Elena y Oswaldo
       </h2>
@@ -272,7 +268,6 @@ function App() {
           width: "100%",
           maxWidth: "900px",
           margin: "20px auto",
-          borderRadius: "10px",
         }}
       >
         <Card.Body data-aos="fade-up" data-aos-duration="1000"
@@ -317,7 +312,7 @@ function App() {
         alt="vestir"
         style={{ maxWidth: "450px", margin: "20px auto" }}
       />
-      <div className="card my-4" style={{ background: "#fcf8d3" }}>
+      <div className="card my-4" style={{ background: "#fdfbe5" }}>
         <div className="card-body">
           <h4 className="text-center">Nosotros</h4>
           <div className="row" data-aos="fade-up" data-aos-duration="1000"
@@ -358,42 +353,22 @@ function App() {
               />
             </div>
           </div>
-          <div className="row" data-aos="fade-up" data-aos-duration="1000"
-        data-aos-delay="200">
-            <div className="col-md-6">
-              <img
-                src={i5}
-                alt="foto5"
-                className="img-fluid"
-                style={{ borderRadius: "10px", marginBottom: "15px" }}
-              />
-            </div>
-            <div className="col-md-6">
-              <img
-                src={i6}
-                alt="foto6"
-                className="img-fluid"
-                style={{ borderRadius: "10px", marginBottom: "15px" }}
-              />
-            </div>
-          </div>
         </div>
       </div>
       {/* PADRES */}
       <h4>Padres de los Novios</h4>
-      <div className="row row-cols-1 row-cols-md-2 g-4" data-aos="fade-left" data-aos-duration="1000"
+      <div className="row row-cols-1 row-cols-md-2 g-4" data-aos="fade-up"  data-aos-duration="1000"
         data-aos-delay="200">
         <div className="col">
           <div className="card-fotos">
             <img
               src={PA}
               className="card-img-top"
-              alt="Padre-Novia"
-              style={{ borderRadius: "70%" }}
+              alt="Padres-Novia"
             />
             <div className="card-body">
-              <h5 className="card-title">JOSE DANIEL MALIACHI</h5>
-              <p className="card-text">Padre de la Novia</p>
+              <h5 className="card-title">JOSE DANIEL MALIACHI & RUBELINA MUÑOZ</h5> 
+              <p className="card-text">Padres de la Novia</p>   
             </div>
           </div>
         </div>
@@ -402,47 +377,18 @@ function App() {
             <img
               src={mA}
               className="card-img-top"
-              alt="Madre-Novia"
-              style={{ borderRadius: "70%" }}
+              alt="Padres-Novio"
             />
             <div className="card-body">
-              <h5 className="card-title">RUBELINA MUÑOZ</h5>
-              <p className="card-text">Madre de la Novia</p>
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="card-fotos">
-            <img
-              src={PN}
-              className="card-img-top"
-              alt="Padre-Novio"
-              style={{ borderRadius: "70%" }}
-            />
-            <div className="card-body">
-              <h5 className="card-title">LUIS GALINDO</h5>
-              <p className="card-text">Padre del Novio</p>
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="card-fotos">
-            <img
-              src={mN}
-              className="card-img-top"
-              alt="Madre-Novio"
-              style={{ borderRadius: "70%" }}
-            />
-            <div className="card-body">
-              <h5 className="card-title">MARIA OFELIA LOPEZ</h5>
-              <p className="card-text">Madre del Novio</p>
+              <h5 className="card-title">LUIS GALINDO & MARIA OFELIA LOPEZ</h5>
+              <p className="card-text">Padres del Novio</p>
             </div>
           </div>
         </div>
       </div>
       <div style={{ marginBottom: "2rem" }}></div>
       <Card
-        data-aos="fade-right"
+        data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-delay="200"
         className="text-center custom-card"
@@ -479,14 +425,7 @@ function App() {
           >
             Confirmar Asistencia <i className="fas fa-check"></i>
           </Button>
-          {/* <Button
-            variant="danger"
-            style={{ marginBottom: "20px", marginLeft: "10px" }}
-            href="https://api.whatsapp.com/send?phone=9625133728&text=Lo%20siento,%20no%20podre%20asistir%20a%20tu%20boda%F0%9F%98%94"
-            target="_blank"
-          >
-            No Confirmo Asistencia <i className="fas fa-times"></i>
-          </Button> */}
+         
         </Card.Body>
       </Card>
       {/* Footer */}
