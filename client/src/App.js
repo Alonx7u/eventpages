@@ -79,9 +79,10 @@ function MyModal({ onIngresar }) {
           Bienvenidos a la invitación de Elena y Oswaldo
         </Modal.Title>
         <Button
-          variant="btn btn-outline-secondary"
+          variant="info"
           onClick={handleClose}
           className="btn-animate1 mt-3"
+
         >
           Ingresar
         </Button>
@@ -417,7 +418,7 @@ function App() {
           </Card.Text>
           <Button
             className="btn-animate"
-            variant="success"
+            variant="info"
             style={{ marginBottom: "20px" }}
             href="https://api.whatsapp.com/send?phone=9625133728&text=%C2%A1%C2%A1Hola,%20confirmo%20mi%20asistencia%20a%20tu%20boda!!%F0%9F%91%B0%F0%9F%8F%BB%E2%80%8D%E2%99%80%E2%9D%A4%F0%9F%A4%B5%F0%9F%8F%BB"
             target="_blank"
