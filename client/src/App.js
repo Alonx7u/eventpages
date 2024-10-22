@@ -126,7 +126,7 @@ function App() {
   }, []);
 
   // Deshabilitar botón después de la fecha límite
-  const disableDate = new Date("2024-10-15T20:23:00"); //fecha limite
+  const disableDate = new Date("2024-11-15T20:23:00"); //fecha limite
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   useEffect(() => {
